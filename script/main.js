@@ -66,7 +66,7 @@ phina.define("MainScene", {
 		this.superInit(options);
 
 		//レイヤー起動
-		this.layer_setup(1,10,1);
+		this.layer_setup(10,1);
 
 		//
 		this.aaa=0;

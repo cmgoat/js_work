@@ -9419,37 +9419,6 @@ phina.namespace(function() {
 			},
 		},
 		// 追加部分 **************************************************
-		//バックグラウンドレイヤー機能準備
-		BackGroundLayer_setup:function(num){	//num : レイヤー枚数指定
-
-			//レイヤーの親。これが動けば配下が全部動くのでスクロールやズーム表現が手軽に行える(多分)
-			//
-			this.BackGroundLayerBase = phina.display.CanvasElement().addChildTo(this);
-
-			this.BackGroundLayer=[];				//レイヤエリア作成
-			this.BackGroundLayer_Property=[];			//レイヤソート情報
-			this.BackGroundLayer_Num=num;			//レイヤ枚数
-
-			//レイヤ作成 (大きい番号のレイヤ程奥になる)
-			for(var i=this.BackGroundLayer_Num-1;i>-1;i--){
-				this.BackGroundLayer_Property[i] = {};
-				this.BackGroundLayer_Property[i].EnableSort = false;
-				this.BackGroundLayer[i] = phina.display.CanvasElement().addChildTo(this.BackGroundLayerBase);
-			}
-		},
-
-		//全バックグラウンドレイヤー内要素ソート
-		BackGroundLayer_sort:function(){
-			for(var i=0;i<this.BackGroundLayer_Property.length;i++){
-				//ソート対象レイヤであるか判別
-				if(this.BackGroundLayer_Property[i].EnableSort){
-					//レイヤ内子要素全てにIDを割り振って安定ソート化する
-					for(var j in this.BackGroundLayer[i].children){this.BackGroundLayer[i].children[j].sort_id=j;}
-					//レイヤー毎のルールに従いソート実行
-					this.BackGroundLayer[i].children.sort( this.BackGroundLayer_Property[i].SortRule );
-				}
-			}
-		},
 		//アクターレイヤー機能準備
 		ActorLayer_setup:function(num){	//num : レイヤー枚数指定
 
@@ -9512,17 +9481,15 @@ phina.namespace(function() {
 		},
 
 		//レイヤー機能準備
-		layer_setup:function(bnum,anum,unum){	//anum : アクターレイヤー枚数指定　unum : UIレイヤー枚数指定
-			this.BackGroundLayer_setup(bnum);
+		layer_setup:function(anum,unum){	//anum : アクターレイヤー枚数指定　unum : UIレイヤー枚数指定
 			this.ActorLayer_setup(anum);
 			this.UiLayer_setup(unum);
 		},
 
 		//全レイヤー内要素ソート
 		layer_sort:function(){
-			this.BackGroundLayer_sort();
-			this.ActorLayer_sort();
-			this.UiLayer_sort();
+		this.ActorLayer_sort();
+		this.UiLayer_sort();
 		}
 		//**************************************************
 	});

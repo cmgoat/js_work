@@ -1,0 +1,33 @@
+2	255	ÅF1
+1	128	ÅF0.5
+0	32	ÅF0.125
+
+
+0	0	0	0	"Particle_Black"
+1	0	0	1	"Particle_Navy"
+2	0	0	2	"Particle_Blue"
+3	0	1	0	"Particle_Green"
+4	0	1	1	"Particle_Teal"
+5	0	1	2	"Particle_DodgerBlue"
+6	0	2	0	"Particle_Lime"
+7	0	2	1	"Particle_SpringGreen"
+8	0	2	2	"Particle_Cyan"
+9	1	0	0	"Particle_Maroon"
+10	1	0	1	"Particle_Purple	"
+11	1	0	2	"Particle_LightIndigo"
+12	1	1	0	"Particle_Olive"
+13	1	1	1	"Particle_Gray"
+14	1	1	2	"Particle_Marine"
+15	1	2	0	"Particle_Chartreuse"
+16	1	2	1	"Particle_LightGreen"
+17	1	2	2	"Particle_LightCyan"
+18	2	0	0	"Particle_Red"
+19	2	0	1	"Particle_DeepPink"
+20	2	0	2	"Particle_Magenta"
+21	2	1	0	"Particle_Orange"
+22	2	1	1	"Particle_Lightcoral"
+23	2	1	2	"Particle_Violet"
+24	2	2	0	"Particle_Yellow"
+25	2	2	1	"Particle_LightYellow"
+26	2	2	2	"Particle_White"
+
